@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "./Header";
+import Footer from "./Footer";
 
 export const metadata: Metadata = {
   title: "next.js13 Blog",
@@ -19,7 +20,7 @@ export default function RootLayout({
       <body className="container mx-auto bg-slate-700 text-slate-50">
         <Header />
         {children}
-        <footer>Footer</footer>
+        <Footer></Footer>
       </body>
     </html>
   );
