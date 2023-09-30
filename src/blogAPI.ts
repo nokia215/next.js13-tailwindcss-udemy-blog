@@ -7,6 +7,8 @@ export const getAllArticles = async (): Promise<Article[]> => {
     throw new Error("BlogAPI Error");
   }
 
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+
   const articles = await res.json();
   return articles;
 };
