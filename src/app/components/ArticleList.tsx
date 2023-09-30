@@ -17,7 +17,14 @@ const ArticleList = ({ articles }: ArticleListProps) => {
               <Link
                 href={`articles/${article.id}`}
                 className="hover:opacity-75"
-              ></Link>
+              >
+                <Image
+                  src={`https://source.unsplash.com/collection/1346951/1000x500?sig=${article.id}`}
+                  alt="image"
+                  width={1280}
+                  height={300}
+                ></Image>
+              </Link>
               <div className="bg-white flex flex-col justify-start p-6">
                 <Link href="#" className="text-blue-700 pb-4 font-bold">
                   Technology

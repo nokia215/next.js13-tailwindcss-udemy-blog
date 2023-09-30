@@ -11,6 +11,12 @@
       "title": "Json-Server",
       "content": "Get a full fake REST API with zero coding in less than 30 seconds (seriously).Created with <3 for front-end developers who need a quick back-end for prototyping and mocking. Egghead.io free video tutorial - Creating demo APIs with json-server",
       "createAt": "2023/09/30"
+    },
+    {
+      "id": "react-and-next-data-fetching",
+      "title": "データ再検証",
+      "content": "Next.js allows you to create or update static pages after you’ve built your site. Incremental Static Regeneration (ISR) enables you to use static-generation on a per-page basis, without needing to rebuild the entire site. With ISR, you can retain the benefits of static while scaling to millions of pages.",
+      "createAt": "2022/09/30"
     }
   ]
 }
