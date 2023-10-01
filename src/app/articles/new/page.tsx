@@ -17,6 +17,7 @@ const CreateBlogPage = () => {
   const [id, setId] = useState<string>("");
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
 
   /**
    * フォームの送信イベントを処理し、新しいブログ記事を作成します。
@@ -27,6 +28,8 @@ const CreateBlogPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // console.log(id, title, content);
+
+    setLoading(true);
 
     await createArticle(id, title, content);
 
@@ -71,7 +74,12 @@ const CreateBlogPage = () => {
 
           <button
             type="submit"
-            className="py-2 px-4 border rounded-md bg-orange-300"
+            className={`py-2 px-4 border rounded-md ${
+              loading
+                ? "bg-orange-300 cursor-not-allowed"
+                : "bg-orange-400 hover:bg-orange-500"
+            } `}
+            disabled={loading}
           >
             投稿
           </button>
