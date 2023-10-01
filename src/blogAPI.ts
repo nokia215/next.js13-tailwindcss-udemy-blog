@@ -95,12 +95,12 @@ export const createArticle = async (
   content: string
 ): Promise<Article> => {
   const currentDateTime = new Date().toISOString();
-  const res = await fetch(`https://localhost3001/posts`, {
+  const res = await fetch(`http://localhost:3001/posts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, title, content, currentDateTime }),
+    body: JSON.stringify({ id, title, content, createdAt: currentDateTime }),
   });
 
   if (!res.ok) {

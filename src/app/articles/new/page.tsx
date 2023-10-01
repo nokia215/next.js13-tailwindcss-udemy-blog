@@ -1,16 +1,54 @@
-import React from "react";
+"use client";
 
+import { createArticle } from "@/blogAPI";
+import { useRouter } from "next/navigation";
+import React, { useState } from "react";
+
+/**
+ * ブログ記事を作成するページコンポーネントです。
+ *
+ * @component
+ * @example
+ * // ブログ記事作成ページを使用する例
+ * <CreateBlogPage />
+ */
 const CreateBlogPage = () => {
+  const router = useRouter();
+  const [id, setId] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
+  const [content, setContent] = useState<string>("");
+
+  /**
+   * フォームの送信イベントを処理し、新しいブログ記事を作成します。
+   *
+   * @param {React.FormEvent<HTMLFormElement>} e - フォームの送信イベント
+   * @returns {void}
+   */
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // console.log(id, title, content);
+
+    await createArticle(id, title, content);
+
+    // 作成後、ユーザーをホームページにリダイレクト
+    router.push("/");
+    router.refresh();
+  };
+
   return (
     <>
       <div className="min-h-screen py-8 px-4 md:px-12">
         <h2 className="text-2xl font-bold mb-4">新規作成</h2>
-        <form className="bg-slate-200 p-6 rounded shadow-lg">
+        <form
+          className="bg-slate-200 p-6 rounded shadow-lg"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-4">
             <label className="text-gray-700 text-sm font-bold mb-2">URL</label>
             <input
               type="text"
               className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+              onChange={(e) => setId(e.target.value)}
             />
           </div>
           <div className="mb-4">
@@ -20,14 +58,23 @@ const CreateBlogPage = () => {
             <input
               type="text"
               className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+              onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div className="mb-4">
             <label className="text-gray-700 text-sm font-bold mb-2">本文</label>
-            <textarea className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none" />
+            <textarea
+              className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none"
+              onChange={(e) => setContent(e.target.value)}
+            />
           </div>
 
-          <button type="submit" className="py-2 px-4 border rounded-md bg-orange-300">投稿</button>
+          <button
+            type="submit"
+            className="py-2 px-4 border rounded-md bg-orange-300"
+          >
+            投稿
+          </button>
         </form>
       </div>
     </>
