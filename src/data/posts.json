@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": "next.js13-udemy",
+      "title": "Next.js13をUdemyで学ぶ",
+      "content": "udemyで勉強中！",
+      "createAt": "2023/09/30"
+    },
+    {
+      "id": "json-server",
+      "title": "Json-Server",
+      "content": "Get a full fake REST API with zero coding in less than 30 seconds (seriously).Created with <3 for front-end developers who need a quick back-end for prototyping and mocking. Egghead.io free video tutorial - Creating demo APIs with json-server",
+      "createAt": "2023/09/30"
+    },
+    {
+      "id": "react-and-next-data-fetching",
+      "title": "データ再検証",
+      "content": "Next.js allows you to create or update static pages after you’ve built your site. Incremental Static Regeneration (ISR) enables you to use static-generation on a per-page basis, without needing to rebuild the entire site. With ISR, you can retain the benefits of static while scaling to millions of pages.",
+      "createAt": "2022/09/30"
+    },
+    {
+      "id": "1",
+      "title": "2",
+      "content": "3",
+      "createdAt": "2023-10-01T08:26:21.517Z"
+    },
+    {
+      "id": "aa",
+      "title": "b",
+      "content": "ccc",
+      "createdAt": "2023-10-01T08:31:31.274Z"
+    },
+    {
+      "id": "test123",
+      "title": "res",
+      "content": "test",
+      "createdAt": "2023-10-01T08:32:37.860Z"
+    },
+    {
+      "id": "1234",
+      "title": "fsad",
+      "content": "asfd",
+      "createdAt": "2023-10-01T08:46:25.711Z"
+    }
+  ]
+}
